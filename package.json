@@ -1,0 +1,22 @@
+{
+	"name": "xaoaiChatbox",
+	"version": "1.0.0",
+	"description": "Interact with Xaoai!",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "nodemon -r dotenv/config index.js"
+	},
+	"keywords": [],
+	"author": "Y2PHEQ",
+	"license": "MIT",
+	"devDependencies": {
+		"nodemon": "^x.x.x",
+		"xaoai-chatbox": "^x.x.x",
+		"xaoai-utils": "^x.x.x"
+	},
+	"dependencies": {
+		"axios": "^x.x.x",
+		"dotenv": "^x.x.x"
+	}
+}
