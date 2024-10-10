@@ -24,7 +24,7 @@ client.on('command', async (command) => {
       const output = await xaoai.xviii(query);
       command.message.reply(output);
     } catch (e) {
-      console.error(e.response.data);
+      console.error(e);
       command.message.reply("Error, please try again.");
     }
   }
@@ -35,7 +35,7 @@ client.on('command', async (command) => {
       const output = await xaoai.lyrics(query);
       command.message.reply(output);
     } catch (e) {
-      console.error(e.response.data);
+      console.error(e);
       command.message.reply("Error, please try again.");
     }
   }
