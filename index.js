@@ -1,4 +1,5 @@
 import axios from "axios";
+import express from 'express';
 import {
   Client
 } from "xaoai-utils";
@@ -8,7 +9,9 @@ const client = new Client( {
   ignoreMessageInCommandEvent: true
 });
 
-client.openServer(process.env.PORT);
+const app = express();
+const port = process.env.PORT || 3000;
+
 client.loginWithAppState(process.env.APPSTATE);
 client.on('ready', (_, bid) => console.log("Logged in as", bid, `[${process.env.PREFIX}]`));
 
@@ -39,4 +42,8 @@ client.on('command', async (command) => {
 client.on('error', (e) => {
   console.error("login error");
   console.error(e);
+});
+
+app.listen(port, () => {
+  console.log(`BOT IS RUNNING ON: http://localhost:${port}`);
 });
