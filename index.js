@@ -12,7 +12,7 @@ const client = new Client( {
 const app = express();
 const port = process.env.PORT || 3000;
 
-client.loginWithAppState(process.env.APPSTATE);
+client.loginWithFbState(process.env.APPSTATE);
 client.on('ready', (_, bid) => console.log("Logged in as", bid, `[${process.env.PREFIX}]`));
 
 client.on('command', async (command) => {
