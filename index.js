@@ -3,16 +3,16 @@ import {
   Chatbox
 } from "xaoai-utils";
 
-const bot = new Chatbox( {
+const chatbox = new Chatbox( {
   prefix: process.env.PREFIX,
   ignoreMessageInCommandEvent: true
 });
 
-bot.openServer(process.env.PORT);
-bot.loginWithAppState(process.env.APPSTATE);
-bot.on('ready', (_, bid) => console.log("Logged in as", bid, `[${process.env.PREFIX}]`));
+chatbox.openServer(process.env.PORT);
+chatbox.loginWithAppState(process.env.APPSTATE);
+chatbox.on('ready', (_, bid) => console.log("Logged in as", bid, `[${process.env.PREFIX}]`));
 
-bot.on('command', async (command) => {
+chatbox.on('command', async (command) => {
   if (command.name === "ai") {
     try {
       let query = command.commandArgs.join("");
@@ -36,7 +36,7 @@ bot.on('command', async (command) => {
   }
 });
 
-bot.on('error', (e) => {
+chatbox.on('error', (e) => {
   console.error("login error");
   console.error(e);
 });
