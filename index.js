@@ -1,18 +1,18 @@
 import axios from "axios";
 import {
-  Chatbox
+  Client
 } from "xaoai-utils";
 
-const chatbox = new Chatbox( {
+const client = new Client( {
   prefix: process.env.PREFIX,
   ignoreMessageInCommandEvent: true
 });
 
-chatbox.openServer(process.env.PORT);
-chatbox.loginWithAppState(process.env.APPSTATE);
-chatbox.on('ready', (_, bid) => console.log("Logged in as", bid, `[${process.env.PREFIX}]`));
+client.openServer(process.env.PORT);
+client.loginWithAppState(process.env.APPSTATE);
+client.on('ready', (_, bid) => console.log("Logged in as", bid, `[${process.env.PREFIX}]`));
 
-chatbox.on('command', async (command) => {
+client.on('command', async (command) => {
   if (command.name === "ai") {
     try {
       let query = command.commandArgs.join("");
@@ -36,7 +36,7 @@ chatbox.on('command', async (command) => {
   }
 });
 
-chatbox.on('error', (e) => {
+client.on('error', (e) => {
   console.error("login error");
   console.error(e);
 });
