@@ -13,7 +13,8 @@
 	"devDependencies": {
 		"nodemon": "^x.x.x",
 		"xaoai-chatbox": "^0.0.2",
-		"xaoai-utils": "^x.x.x"
+		"xaoai-utils": "^x.x.x",
+		"@y2pheq/xaoai": "^x.x.x"
 	},
 	"dependencies": {
 		"axios": "^x.x.x",
