@@ -12,7 +12,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"nodemon": "^x.x.x",
-		"xaoai-chatbox": "^x.x.x",
+		"xaoai-chatbox": "^0.0.2",
 		"xaoai-utils": "^x.x.x"
 	},
 	"dependencies": {
