@@ -3,7 +3,9 @@ import express from 'express';
 import {
   Client
 } from "xaoai-utils";
+import Xaoai from "@y2pheq/xaoai";
 
+const xaoai = new Xaoai();
 const client = new Client( {
   prefix: process.env.PREFIX,
   ignoreMessageInCommandEvent: true
